@@ -83,9 +83,13 @@ static SimpleSyncService * sharedServiceInstance;
 
     NSError *error = nil;
     NSArray *updatedIdentifiers = [data valueForKey:identifierPropertyName];
+    NSEntityDescription * description = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    Class entityClass = NSClassFromString(description.managedObjectClassName);
+    NSString * localIdentifierName = [entityClass performSelector:@selector(keyForRemoteKey:)
+                                                       withObject:identifierPropertyName];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@", identifierPropertyName, updatedIdentifiers];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:identifierPropertyName ascending:YES]];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K IN %@", localIdentifierName, updatedIdentifiers];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:localIdentifierName ascending:YES]];
     NSArray *existingRecords = [context executeFetchRequest:request error:&error];
 
     if (existingRecords) {
@@ -98,7 +102,7 @@ static SimpleSyncService * sharedServiceInstance;
 
             NSManagedObject *record = [self recordInArray:existingRecords
                                                 withValue:identifier
-                                                   forKey:identifierPropertyName];
+                                                   forKey:localIdentifierName];
             if (!record) {
                 record = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                        inManagedObjectContext:context];
