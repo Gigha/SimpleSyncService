@@ -27,8 +27,6 @@
 #import "DMMFetchDataOperation.h"
 #import <ObjectiveRecord/ObjectiveRecord.h>
 
-static SimpleSyncService * sharedServiceInstance;
-
 @interface SimpleSyncService ()
 
 @property (nonatomic, strong) NSArray * adapters;
@@ -54,6 +52,7 @@ static SimpleSyncService * sharedServiceInstance;
     NSRunLoop *runner = [NSRunLoop currentRunLoop];
 
     for (DMMSyncServiceAdapter * adapter in self.adapters) {
+        [self queueSyncWithAdapter:adapter];
         NSTimer * timer = [NSTimer timerWithTimeInterval:adapter.interval
                                                   target:self
                                                 selector:@selector(fireTimer:)
@@ -69,10 +68,14 @@ static SimpleSyncService * sharedServiceInstance;
     [self.adapterTimers removeAllObjects];
 }
 
-- (void)fireTimer:(NSTimer *)timer {
-    DMMSyncServiceAdapter * adapter = (DMMSyncServiceAdapter *)timer.userInfo;
+- (void)queueSyncWithAdapter:(DMMSyncServiceAdapter *)adapter
+{
     DMMFetchDataOperation * operation = [[DMMFetchDataOperation alloc] initWithSyncAdapter:adapter];
     [self.queue addOperation:operation];
+}
+
+- (void)fireTimer:(NSTimer *)timer {
+    [self queueSyncWithAdapter:(DMMSyncServiceAdapter *)timer.userInfo];
 }
 
 + (BOOL)synchronizeData:(NSArray *)data
@@ -92,7 +95,10 @@ static SimpleSyncService * sharedServiceInstance;
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:localIdentifierName ascending:YES]];
     NSArray *existingRecords = [context executeFetchRequest:request error:&error];
 
-    if (existingRecords) {
+    if (error) {
+        NSLog(@"ERROR: Synchronization Service failed to fetch existing records: %@", error.localizedDescription);
+        return NO;
+    } else if (existingRecords) {
         for (int i = 0; i < updatedIdentifiers.count; i++) {
             id identifier = updatedIdentifiers[i];
             if ([identifier isEqual:[NSNull null]]) {
@@ -110,9 +116,6 @@ static SimpleSyncService * sharedServiceInstance;
             [record update:data[i]];
         }
         return [self saveContext:context];
-    } else if (error) {
-        NSLog(@"ERROR: Synchronization Service failed to fetch existing records: %@", error.localizedDescription);
-        return NO;
     }
     return YES;
 }
