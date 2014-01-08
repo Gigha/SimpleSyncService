@@ -1,20 +1,19 @@
 //
-//  Person.m
+//  Cat.m
 //  SampleProject
 //
 //  Created by Girgis on 08/01/14.
 //  Copyright (c) 2014 Delisa Mason. All rights reserved.
 //
 
-#import "Person.h"
 #import "Cat.h"
+#import "Person.h"
 
 
-@implementation Person
+@implementation Cat
 
-@dynamic email;
 @dynamic name;
-@dynamic numberOfCats;
-@dynamic cats;
+@dynamic specie;
+@dynamic owner;
 
 @end

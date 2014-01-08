@@ -20,7 +20,6 @@
 		8A1062BC1845003200F04E3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A10629B1845003200F04E3E /* Cocoa.framework */; };
 		8A1062C41845003200F04E3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A1062C21845003200F04E3E /* InfoPlist.strings */; };
 		8A1062D41845044900F04E3E /* PeopleAPISyncAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1062D31845044900F04E3E /* PeopleAPISyncAdapter.m */; };
-		8A26F709184595EA00AFE070 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26F708184595EA00AFE070 /* Person.m */; };
 		8A26F70C1847150300AFE070 /* PeopleAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26F70B1847150300AFE070 /* PeopleAPI.m */; };
 		8A26F70F1847253300AFE070 /* SimpleSyncServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26F70E1847253300AFE070 /* SimpleSyncServiceTests.m */; };
 		8A26F7121847F76A00AFE070 /* AddressBookSyncAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A26F7111847F76A00AFE070 /* AddressBookSyncAdapter.m */; };
@@ -28,6 +27,8 @@
 		8AE38A3518450D1700AEC93C /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AE38A3318450D1700AEC93C /* SampleProject.xcdatamodeld */; };
 		8AE38A3618450D1700AEC93C /* SampleProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8AE38A3318450D1700AEC93C /* SampleProject.xcdatamodeld */; };
 		984A838CCABF4985A0644A6F /* libPods-SampleProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB897F1FD32F457CB9063C1E /* libPods-SampleProjectTests.a */; };
+		E4EA6191187D61FD00E248C1 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EA6190187D61FD00E248C1 /* Person.m */; };
+		E4EA6194187D61FD00E248C1 /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EA6193187D61FD00E248C1 /* Cat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +64,6 @@
 		8A1062C31845003200F04E3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A1062D21845044900F04E3E /* PeopleAPISyncAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleAPISyncAdapter.h; sourceTree = "<group>"; };
 		8A1062D31845044900F04E3E /* PeopleAPISyncAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleAPISyncAdapter.m; sourceTree = "<group>"; };
-		8A26F707184595EA00AFE070 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		8A26F708184595EA00AFE070 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		8A26F70A1847150300AFE070 /* PeopleAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleAPI.h; sourceTree = "<group>"; };
 		8A26F70B1847150300AFE070 /* PeopleAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleAPI.m; sourceTree = "<group>"; };
 		8A26F70E1847253300AFE070 /* SimpleSyncServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleSyncServiceTests.m; sourceTree = "<group>"; };
@@ -74,6 +73,10 @@
 		8AE38A3418450D1700AEC93C /* SampleProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleProject.xcdatamodel; sourceTree = "<group>"; };
 		95BDC89118674BD0B2F95F33 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BB897F1FD32F457CB9063C1E /* libPods-SampleProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4EA618F187D61FD00E248C1 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		E4EA6190187D61FD00E248C1 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		E4EA6192187D61FD00E248C1 /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		E4EA6193187D61FD00E248C1 /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,9 +216,11 @@
 		8AE38A3218450D0A00AEC93C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4EA618F187D61FD00E248C1 /* Person.h */,
+				E4EA6192187D61FD00E248C1 /* Cat.h */,
+				E4EA6193187D61FD00E248C1 /* Cat.m */,
+				E4EA6190187D61FD00E248C1 /* Person.m */,
 				8AE38A3318450D1700AEC93C /* SampleProject.xcdatamodeld */,
-				8A26F707184595EA00AFE070 /* Person.h */,
-				8A26F708184595EA00AFE070 /* Person.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -394,10 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EA6194187D61FD00E248C1 /* Cat.m in Sources */,
 				8A26F7121847F76A00AFE070 /* AddressBookSyncAdapter.m in Sources */,
 				8A1062A81845003200F04E3E /* main.m in Sources */,
+				E4EA6191187D61FD00E248C1 /* Person.m in Sources */,
 				8A1062D41845044900F04E3E /* PeopleAPISyncAdapter.m in Sources */,
-				8A26F709184595EA00AFE070 /* Person.m in Sources */,
 				8A1062AF1845003200F04E3E /* DMMAppDelegate.m in Sources */,
 				8AE38A3518450D1700AEC93C /* SampleProject.xcdatamodeld in Sources */,
 				8A26F70C1847150300AFE070 /* PeopleAPI.m in Sources */,
